@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjit VFX - Portfolio</title>
+    <title>Arjit | VFX & Financial Educator</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
         
         body { 
-            /* शानदार ग्रेडिएंट बैकग्राउंड जो एकदम ब्लैक नहीं लगेगा */
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            /* बैकग्राउंड मोशन का कोड */
+            background: linear-gradient(-45deg, #000000, #0a1a0a, #000000, #0a1a0a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #ffffff; 
             font-family: 'Inter', sans-serif; 
             text-align: center; 
@@ -18,68 +20,49 @@
             min-height: 100vh;
         }
 
-        .container { max-width: 500px; margin: auto; }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        /* फोटो पर खास मोशन */
         .profile-img { 
-            width: 160px; height: 160px; border-radius: 50%; 
-            border: 4px solid #33ff33; margin-bottom: 20px; 
-            object-fit: cover; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 150px; height: 150px; border-radius: 50%; 
+            border: 3px solid #33ff33; margin-bottom: 20px; 
+            object-fit: cover; transition: all 0.5s ease; 
         }
-        .profile-img:hover { transform: scale(1.1) rotate(5deg); }
+        .profile-img:hover { transform: scale(1.1); box-shadow: 0 0 30px #33ff33; }
 
-        /* स्क्रॉल के साथ आने वाला मोशन */
-        .reveal { 
-            opacity: 0; transform: translateY(30px); 
-            transition: all 0.8s ease-out; 
-        }
-        .active { opacity: 1; transform: translateY(0); }
+        h1 { margin-bottom: 5px; }
+        p { color: #aaaaaa; margin-bottom: 30px; }
 
         .button { 
-            display: block; width: 100%; margin: 15px auto; 
-            padding: 20px; background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            color: white; text-decoration: none; border-radius: 20px; 
+            display: block; width: 90%; max-width: 400px; margin: 15px auto; 
+            padding: 18px; background: rgba(0, 0, 0, 0.6); 
+            border: 1px solid rgba(51, 255, 51, 0.3); 
+            color: white; text-decoration: none; border-radius: 12px; 
             transition: all 0.3s ease; backdrop-filter: blur(10px);
         }
         .button:hover { 
-            background: #33ff33; color: #000; 
-            transform: scale(1.03); box-shadow: 0 0 25px rgba(51, 255, 51, 0.3);
+            background: #33ff33; color: #000; font-weight: bold;
+            transform: translateY(-5px); box-shadow: 0 10px 20px rgba(51, 255, 51, 0.5);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="IMG_0805.jpg" alt="Profile" class="profile-img">
-        <h1>Arjit</h1>
-        <p>Visual Storyteller | VFX & Cinematic Editor</p>
+    <img src="IMG_0805.jpg" alt="Arjit" class="profile-img">
+    <h1>Arjit</h1>
+    <p>Visual Storyteller | VFX & Cinematic Editor</p>
 
-        <div class="reveal">
-            <a href="#" class="button">🎥 Official Portfolio</a>
-            <a href="#" class="button">✨ Behind The Scenes</a>
-        </div>
+    <a href="https://www.instagram.com/arjit_vfx" class="button">📸 Instagram: Official Portfolio</a>
+    <a href="https://www.instagram.com/arjit_vfx_behindthescenes" class="button">✨ Instagram: Behind The Scenes</a>
+    <a href="https://youtube.com/@arjitfinancialpicks" class="button">📈 YouTube: Financial Education</a>
+    <a href="https://youtube.com/@arjisticvfx" class="button">🎥 YouTube: Vlogs / Personal</a>
+    <a href="#" class="button">📦 Free Presets & Resources</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSebhS-6vZm28m3FylAiyr6E1wtEGEwphE4v3x4t8L-56oD5-g/viewform" class="button">❓ Ask Me Anything (FAQ)</a>
+    <a href="mailto:Arjitbhatt615@gmail.com" class="button">✉️ Contact / Collaboration</a>
 
-        <div class="reveal">
-            <a href="#" class="button">📦 Pro Editing Presets</a>
-            <a href="#" class="button">🔊 Sound Effects Library</a>
-        </div>
-
-        <div class="reveal">
-            <a href="यहाँ लिंक डालें" class="button">❓ Ask Me Anything (FAQ)</a>
-            <a href="mailto:Arjitbhatt615@gmail.com" class="button">✉️ Contact Me</a>
-        </div>
-    </div>
-
-    <script>
-        // यह स्क्रॉलिंग के साथ मोशन लाएगा
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.reveal').forEach(el => {
-                if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
-            });
-        });
-        // शुरुआत के लिए
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-    </script>
 </body>
 </html>
+
